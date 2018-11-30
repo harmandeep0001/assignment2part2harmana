@@ -1,0 +1,52 @@
+﻿@model IEnumerable<assignment.Models.Shopperss>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Shopper.Products)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Accessories)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shopper.Products)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Accessories)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Price }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Price }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Price })
+        </td>
+    </tr>
+}
+
+</table>
